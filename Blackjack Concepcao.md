@@ -1,5 +1,5 @@
 #Introdução
-  A ideia do projeto é fazer um progama que simule o jogo Blackjack, ou 21, em C++ visando aprofundar conhecimento em progamação orientada a objetos. O jogo em si é simples e com regras de fácil entendimento, ele utiliza um baralho de 52 cartas,essas sendo 2,3,4,5,6,7,8,9,10,J,Q,K,A de 4 naipes diferentes(espadas(♠), paus(♣), copas(♥) e ouro(♦)), é possível separar o jogo em etapas para facilitar a implementação de tal.
+A ideia do projeto é fazer um progama que simule o jogo Blackjack, ou 21, em C++ visando aprofundar conhecimento em progamação orientada a objetos. O jogo em si é simples e com regras de fácil entendimento, ele utiliza um baralho de 52 cartas,essas sendo 2,3,4,5,6,7,8,9,10,J,Q,K,A de 4 naipes diferentes(espadas(♠), paus(♣), copas(♥) e ouro(♦)), é possível separar o jogo em etapas para facilitar a implementação de tal.
   
   #O JOGO
     #Valores de cada carta: 
