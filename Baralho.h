@@ -17,42 +17,26 @@
 #include <cstdlib>
 #include <ctime>
 #include <sstream>
+#include <algorithm>
 
-#define SIZE 52
+#include "Carta.h"
 
 using namespace std;
 
-class Carta
+
+class DeckDeCartas
 {
 public:
-
-        //Construtor com parametros, para preencher as cartas vazias criadas
-    Carta(int faceDaCarta, int naipeDaCarta, int valorDacarta);
-    	//função pra printar
-    string toString();
-    friend ostream& operator<<(ostream &output, const Carta &c){
-    		output << ": " << c.valor << endl;
-    		return output;
-    	}
-        //Cria 3 strings para naipe e pesos da carta
-    int face;
-    int naipe;
-    int valor;
-
-private:
-
-};
-
-class deckDeCartas
-{
-public:
-
-    vector <Carta> baralho;
-
-    deckDeCartas();
+    DeckDeCartas();
+    void criabaralho();
+    void shuffle();
+    void Deal(Carta* card);
+    Carta* Draw();
     void printbaralho();
-private:
 
+
+private:
+    vector <Carta*> baralho;
 
 };
 
