@@ -61,3 +61,17 @@ Carta* DeckDeCartas::Draw()
 			baralho.pop_back();
 		return currentCard;
 }
+Carta* DeckDeCartas::colocar(long long unsigned int index) {
+	if(index >= baralho.size())
+
+		return 0;
+
+	Carta *currentCard = baralho[index];
+		baralho.erase(baralho.begin()+index);
+
+	return currentCard;
+}
+
+
+
+

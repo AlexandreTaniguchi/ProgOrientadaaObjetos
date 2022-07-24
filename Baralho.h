@@ -32,6 +32,8 @@ public:
     void shuffle();
     void Deal(Carta* card);
     Carta* Draw();
+    Carta * colocar(long long unsigned int posicao);
+    int tamanho(){return baralho.size();}
     void printbaralho();
 
 

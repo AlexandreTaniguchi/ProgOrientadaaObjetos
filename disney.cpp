@@ -16,19 +16,12 @@ using namespace std;
 
 int main() {
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
-	DeckDeCartas caralho;
+	DeckDeCartas baralho;
 	Jogador Player;
 	Jogador Dealer;
 	Blackjack number21;
-	srand ( unsigned ( std::time(0) ) );
-	caralho.criabaralho();
-	caralho.shuffle();
-	caralho.printbaralho();
-	Player.DealJogador(&caralho,2);
-	cout << " " << endl;
-	Player.printmao();
-	caralho.printbaralho();
-
-	//number21.menu(&Player,&Dealer,&caralho);
+	baralho.criabaralho();
+	baralho.shuffle();
+	number21.menu(&Player,&Dealer,&baralho);
 	return 0;
 }

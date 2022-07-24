@@ -18,13 +18,20 @@
 class Jogador {
 public:
 	Jogador();
-	void DealJogador(DeckDeCartas *baralho, int qnt);
+	void DealJogador(DeckDeCartas *baralho, int num);
+	//void DealDealer(DeckDeCartas baralho, int qnt);
+	void MoveMesa();
+	void MoveMesaDealer();
 	DeckDeCartas * retornamao(){return &mao;}
-	void DealDealer(DeckDeCartas baralho, int qnt);
-	void printmao();
+	void printmao(){mao.printbaralho();}
+	void printmesa(){mesa.printbaralho();}
+	int sizeofmao(){return mao.tamanho();}
+	void somavalor();
 private:
 	DeckDeCartas mao;
 	DeckDeCartas mesa;
 	DeckDeCartas descarte;
+	int valortotal=0;
+
 };
 #endif /* JOGADOR_H_ */

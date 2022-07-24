@@ -42,7 +42,7 @@ public:
     		output << ": " << c.valor << endl;
     		return output;
     	}
-        //Cria 3 strings para naipe e pesos da carta
+    int retornavalor(){return valor;}
 
 private:
     int face;
