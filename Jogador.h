@@ -21,12 +21,15 @@ public:
 	void DealJogador(DeckDeCartas *baralho, int num);
 	void MoveMesa();
 	void MoveMesaDealer();
+	void MoveMaoDealer();
 	DeckDeCartas * retornamao(){return &mao;}
 	void printmao(){mao.printbaralho();}
 	void printmesa(){mesa.printbaralho();}
 	void printvalortotal(){ cout << valortotal << endl;}
 	int sizeofmao(){return mao.tamanho();}
+	int sizeofmesa(){return mesa.tamanho();}
 	int somavalor();
+	int somavalormesa();
 private:
 	DeckDeCartas mao;
 	DeckDeCartas mesa;

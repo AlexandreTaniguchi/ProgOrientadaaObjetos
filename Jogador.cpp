@@ -36,6 +36,14 @@ void Jogador::MoveMesaDealer()
 				mesa.Deal(tmp);
 			}
 }
+void Jogador::MoveMaoDealer()
+{
+	while(sizeofmesa() != 0){
+			Carta * tmp1 = mesa.colocar(sizeofmesa()-1);
+			// Remove a carta solicitada da mao e adiciona no campo
+				mao.Deal(tmp1);
+			}
+}
 int Jogador::somavalor()
 {
 	valortotal =0;
@@ -55,7 +63,25 @@ int Jogador::somavalor()
 	}
 	return valortotal;
 }
+int Jogador::somavalormesa()
+{
+	valortotal =0;
+	Carta *temp1=0;
+	DeckDeCartas TEMP2;
+	while(sizeofmesa()!=0)
+	{
 
+		temp1 = mesa.colocar(0);
+		valortotal = valortotal+temp1->retornavalor();
+		TEMP2.Deal(temp1);
+
+	}
+	while(TEMP2.tamanho()!=0)
+	{
+		mesa.Deal(TEMP2.colocar(0));
+	}
+	return valortotal;
+}
 
 
 

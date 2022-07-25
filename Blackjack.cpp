@@ -65,7 +65,7 @@ void Blackjack::menu(Jogador * Player,Jogador * Dealer,DeckDeCartas *baralho,Bla
 					}
 					else
 					{
-						cout << "Você Perdeu!"<<endl;
+						cout << "EL KAPPA" <<endl;
 					}
 				}
 				break;
@@ -87,8 +87,52 @@ void Blackjack::menu(Jogador * Player,Jogador * Dealer,DeckDeCartas *baralho,Bla
 }
 void Blackjack::game(Jogador * Player, Jogador * Dealer, DeckDeCartas *baralho)
 {
-cout <<"EL KAPPA" << endl;
+	Player->MoveMesa();
+	Dealer->MoveMaoDealer();
+	while(Dealer->somavalor()<16){
+		Dealer->DealJogador(baralho, 1);}
+	Dealer->MoveMesa();
+		if(Dealer->somavalormesa()>(21)){
+			Player->somavalormesa();
+			cout << "Sua mão vale: ";
+			Player->printvalortotal();
+			cout << " " << endl;
+			Dealer->somavalormesa();
+			cout << "A mão do Dealer vale: ";
+			Dealer->printvalortotal();
+			cout << " " << endl;
+			cout << "Dealer Ganhou" << endl;
+			cout << "Você Perder" << endl;
+		}
+		else if(Player->somavalormesa()==Dealer->somavalormesa())
+		{
+			Player->somavalormesa();
+			cout << "Sua mão vale: ";
+			Player->printvalortotal();
+			cout << " " << endl;
+			Dealer->somavalormesa();
+			cout << "A mão do Dealer vale: ";
+			Dealer->printvalortotal();
+			cout << " " << endl;
+			cout << "Dealer Ganhou" << endl;
+			cout << "Você Perder" << endl;
+		}
+		else(Player->somavalormesa() > Dealer->somavalormesa());
+		{
+			Player->somavalormesa();
+			cout << "Sua mão vale: ";
+			Player->printvalortotal();
+			cout << " " << endl;
+			Dealer->somavalormesa();
+			cout << "A mão do Dealer vale: ";
+			Dealer->printvalortotal();
+			cout << " " << endl;
+			cout << "Dealer Ganhou" << endl;
+			cout << "Você Perder" << endl;
+		}
 }
+
+
 
 
 
