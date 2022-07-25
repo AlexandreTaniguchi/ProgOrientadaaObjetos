@@ -63,17 +63,22 @@ void Jogador::MoveMaoDescarte()
 
 int Jogador::somavalor()
 {
+	bool hasAce = false;
 	valortotal =0;
 	Carta *temp=0;
 	DeckDeCartas TEMP1;
 	while(sizeofmao()!=0)
 	{
-
 		temp = mao.colocar(0);
+		if(temp->retornavalor() == 11)
+			hasAce = true;
 		valortotal = valortotal+temp->retornavalor();
 		TEMP1.Deal(temp);
-
 	}
+
+	if(valortotal > 21 && hasAce)
+		valortotal -= 10;
+
 	while(TEMP1.tamanho()!=0)
 	{
 		mao.Deal(TEMP1.colocar(0));
