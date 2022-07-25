@@ -22,9 +22,13 @@ public:
 	void MoveMesa();
 	void MoveMesaDealer();
 	void MoveMaoDealer();
+	void MoveMaoDescarte();
+	void MoveMesaDescarte();
 	DeckDeCartas * retornamao(){return &mao;}
+	DeckDeCartas * retornadescarte(){return &descarte;}
 	void printmao(){mao.printbaralho();}
 	void printmesa(){mesa.printbaralho();}
+	void printdescarte(){descarte.printbaralho();}
 	void printvalortotal(){ cout << valortotal << endl;}
 	int sizeofmao(){return mao.tamanho();}
 	int sizeofmesa(){return mesa.tamanho();}

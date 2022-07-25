@@ -44,6 +44,23 @@ void Jogador::MoveMaoDealer()
 				mao.Deal(tmp1);
 			}
 }
+void Jogador::MoveMesaDescarte()
+{
+	while(sizeofmesa() != 0){
+			Carta * tmp2 = mesa.colocar(sizeofmesa()-1);
+			// Remove a carta solicitada da mao e adiciona no campo
+				descarte.Deal(tmp2);
+			}
+}
+void Jogador::MoveMaoDescarte()
+{
+	while(sizeofmao() != 0){
+			Carta * tmp3 = mao.colocar(sizeofmao()-1);
+			// Remove a carta solicitada da mao e adiciona no campo
+				descarte.Deal(tmp3);
+			}
+}
+
 int Jogador::somavalor()
 {
 	valortotal =0;

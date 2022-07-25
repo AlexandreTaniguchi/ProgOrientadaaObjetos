@@ -61,7 +61,17 @@ void Blackjack::menu(Jogador * Player,Jogador * Dealer,DeckDeCartas *baralho,Bla
 				case 4: {
 						Player->DealJogador(baralho, 1);
 					if(Player->somavalor()>21){
-						cout << "Você Perdeu!"<<endl;
+						cout << "Você Estourou!"<< endl;
+						Player->somavalor();
+						cout << "Sua m�o vale:";
+						Player->printvalortotal();
+						Player->MoveMaoDescarte();
+						Dealer->MoveMaoDescarte();
+						Dealer->MoveMesaDescarte();
+						Player->DealJogador(baralho,2);
+						Dealer->DealJogador(baralho,2);
+						Dealer->MoveMesaDealer();
+
 					}
 					else
 					{
@@ -76,7 +86,7 @@ void Blackjack::menu(Jogador * Player,Jogador * Dealer,DeckDeCartas *baralho,Bla
 				}
 				}
 				case 2: {
-					cout << "Função não implementada. " << endl;
+					cout << "EL KAPPA " << endl;
 
 					break;
 				}
@@ -89,48 +99,74 @@ void Blackjack::game(Jogador * Player, Jogador * Dealer, DeckDeCartas *baralho)
 {
 	Player->MoveMesa();
 	Dealer->MoveMaoDealer();
-	while(Dealer->somavalor()<16){
-		Dealer->DealJogador(baralho, 1);}
+	while(Dealer->somavalor()<17){
+		Dealer->DealJogador(baralho, 1);
+	}
 	Dealer->MoveMesa();
-		if(Dealer->somavalormesa()>(21)){
-			Player->somavalormesa();
-			cout << "Sua mão vale: ";
-			Player->printvalortotal();
-			cout << " " << endl;
-			Dealer->somavalormesa();
-			cout << "A mão do Dealer vale: ";
-			Dealer->printvalortotal();
-			cout << " " << endl;
-			cout << "Dealer Ganhou" << endl;
-			cout << "Você Perder" << endl;
-		}
-		else if(Player->somavalormesa()==Dealer->somavalormesa())
-		{
-			Player->somavalormesa();
-			cout << "Sua mão vale: ";
-			Player->printvalortotal();
-			cout << " " << endl;
-			Dealer->somavalormesa();
-			cout << "A mão do Dealer vale: ";
-			Dealer->printvalortotal();
-			cout << " " << endl;
-			cout << "Dealer Ganhou" << endl;
-			cout << "Você Perder" << endl;
-		}
-		else(Player->somavalormesa() > Dealer->somavalormesa());
-		{
-			Player->somavalormesa();
-			cout << "Sua mão vale: ";
-			Player->printvalortotal();
-			cout << " " << endl;
-			Dealer->somavalormesa();
-			cout << "A mão do Dealer vale: ";
-			Dealer->printvalortotal();
-			cout << " " << endl;
-			cout << "Dealer Ganhou" << endl;
-			cout << "Você Perder" << endl;
-		}
+	if(Dealer->somavalormesa()>21){
+		Player->somavalormesa();
+		cout << "Sua mão vale: ";
+		Player->printvalortotal();
+		cout << " " << endl;
+		Dealer->somavalormesa();
+		cout << "A mão do Dealer vale: ";
+		Dealer->printvalortotal();
+		cout << " " << endl;
+		cout << "Dealer Perdeu1" << endl;
+		cout << "Você Ganhou" << endl;
+		Player->MoveMesaDescarte();
+		Dealer->MoveMesaDescarte();
+	}
+	else if(Player->somavalormesa()==Dealer->somavalormesa())
+	{
+		Player->somavalormesa();
+		cout << "Sua mão vale: ";
+		Player->printvalortotal();
+		cout << " " << endl;
+		Dealer->somavalormesa();
+		cout << "A mão do Dealer vale: ";
+		Dealer->printvalortotal();
+		cout << " " << endl;
+		cout << "Dealer Ganhou2" << endl;
+		cout << "Você Perdeu" << endl;
+		Player->MoveMesaDescarte();
+		Dealer->MoveMesaDescarte();
+	}
+	else if(Player->somavalormesa() > Dealer->somavalormesa())
+	{
+		Player->somavalormesa();
+		cout << "Sua mão vale: ";
+		Player->printvalortotal();
+		cout << " " << endl;
+		Dealer->somavalormesa();
+		cout << "A mão do Dealer vale: ";
+		Dealer->printvalortotal();
+		cout << " " << endl;
+		cout << "Dealer Perdeu3" << endl;
+		cout << "Você Ganhou" << endl;
+		Player->MoveMesaDescarte();
+		Dealer->MoveMesaDescarte();
+	}
+	else if(Player->somavalormesa() < Dealer->somavalormesa())
+	{
+		Player->somavalormesa();
+		cout << "Sua mão vale: ";
+		Player->printvalortotal();
+		cout << " " << endl;
+		Dealer->somavalormesa();
+		cout << "A mão do Dealer vale: ";
+		Dealer->printvalortotal();
+		cout << " " << endl;
+		cout << "Dealer Ganhou4" << endl;
+		cout << "Você Perdeu" << endl;
+		Player->MoveMesaDescarte();
+		Dealer->MoveMesaDescarte();
+	}
+		Player->DealJogador(baralho,2);
+		Dealer->DealJogador(baralho,2);
+		Dealer->MoveMesaDealer();
 }
+
 
 
 

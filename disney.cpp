@@ -24,6 +24,5 @@ int main() {
 	baralho.criabaralho();
 	baralho.shuffle();
 	number21.menu(&Player,&Dealer,&baralho,&number21);
-
 	return 0;
 }
