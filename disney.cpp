@@ -20,8 +20,10 @@ int main() {
 	Jogador Player;
 	Jogador Dealer;
 	Blackjack number21;
+	srand ( unsigned ( std::time(0) ) );
 	baralho.criabaralho();
 	baralho.shuffle();
-	number21.menu(&Player,&Dealer,&baralho);
+	number21.menu(&Player,&Dealer,&baralho,&number21);
+
 	return 0;
 }

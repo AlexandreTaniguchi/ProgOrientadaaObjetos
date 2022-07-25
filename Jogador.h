@@ -19,14 +19,14 @@ class Jogador {
 public:
 	Jogador();
 	void DealJogador(DeckDeCartas *baralho, int num);
-	//void DealDealer(DeckDeCartas baralho, int qnt);
 	void MoveMesa();
 	void MoveMesaDealer();
 	DeckDeCartas * retornamao(){return &mao;}
 	void printmao(){mao.printbaralho();}
 	void printmesa(){mesa.printbaralho();}
+	void printvalortotal(){ cout << valortotal << endl;}
 	int sizeofmao(){return mao.tamanho();}
-	void somavalor();
+	int somavalor();
 private:
 	DeckDeCartas mao;
 	DeckDeCartas mesa;

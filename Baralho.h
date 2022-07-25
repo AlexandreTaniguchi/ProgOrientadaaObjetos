@@ -35,8 +35,6 @@ public:
     Carta * colocar(long long unsigned int posicao);
     int tamanho(){return baralho.size();}
     void printbaralho();
-
-
 private:
     vector <Carta*> baralho;
 

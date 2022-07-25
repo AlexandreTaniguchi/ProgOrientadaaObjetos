@@ -15,13 +15,12 @@ Blackjack::Blackjack()
 	// TODO Auto-generated constructor stub
 
 }
-void Blackjack::menu(Jogador * Player,Jogador * Dealer,DeckDeCartas *baralho)
+void Blackjack::menu(Jogador * Player,Jogador * Dealer,DeckDeCartas *baralho,Blackjack * number21)
 {
 
-	int m=0,n=0,b=0;
+	int m=0,n=0;
 	Player->DealJogador(baralho,2);
 	Dealer->DealJogador(baralho,2);
-	Player->printmao();
 	Dealer->MoveMesaDealer();
 	//Jogador 1 comeÃ§a o jogo
 	while(1)
@@ -44,45 +43,53 @@ void Blackjack::menu(Jogador * Player,Jogador * Dealer,DeckDeCartas *baralho)
 						<< endl;
 				cin >> n;
 				cout << "você escolheu a opção: " << n << endl;
-			}
-			switch (n) {
-			case 1: {
-				Player->printmao();
-				break;
-			}
-			case 2: {
-				fflush(stdin);
-				Dealer->printmesa();
-				break;
-			}
-			case 3: {
-				if (Player->sizeofmao() != 0) {
-						Player->somavalor();
-
+				switch (n) {
+				case 1: {
+					Player->printmao();
+					break;
+				}
+				case 2: {
+					fflush(stdin);
+					Dealer->printmesa();
+					break;
+				}
+				case 3: {
+					Player->somavalor();
+					Player->printvalortotal();
+					break;
+				}
+				case 4: {
+						Player->DealJogador(baralho, 1);
+					if(Player->somavalor()>21){
+						cout << "Você Perdeu!"<<endl;
 					}
+					else
+					{
+						cout << "Você Perdeu!"<<endl;
+					}
+				}
+				break;
+				case 5: {
+					number21->game(Player, Dealer, baralho);
+					break;
+				}
+				}
+				}
+				case 2: {
+					cout << "Função não implementada. " << endl;
+
 					break;
 				}
 			}
-			case 4: {
-				if (Player->sizeofmao() != 0 && b == 0) {
-					Player->DealJogador(baralho, 1);
-					b++;
-				}
-			}
-			break;
-			case 5: {
-				break;
-			} }
-			break;
-		case 2: {
-			cout << "Função não implementada. " << endl;
-
-			break;
-		}
-	}
 
 		}
-	}
+		}
+}
+void Blackjack::game(Jogador * Player, Jogador * Dealer, DeckDeCartas *baralho)
+{
+cout <<"EL KAPPA" << endl;
+}
+
 
 
 

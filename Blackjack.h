@@ -16,8 +16,8 @@
 class Blackjack {
 public:
 	Blackjack();
-	void menu(Jogador * Player,Jogador * Dealer,DeckDeCartas * baralho);
-	void limpa();
+	void menu(Jogador * Player,Jogador * Dealer,DeckDeCartas * baralho,Blackjack *number21);
+	void game(Jogador * Player, Jogador * Dealer, DeckDeCartas *baralho);
 };
 
 
